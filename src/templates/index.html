@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></head>
+  <body>
+    <div class="container">
+      <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image"><br>
+        <input type="submit">
+      </form>
+      <h2>Query:</h2>
+      {% if query %}
+      <img src="/data/images/processed/{{ query }}.jpg" width="300px">
+      {% endif %}
+      <h2>Results:</h2>
+      {% for result in results %}
+      <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+          <a href="/similar/{{ result[1] }}"><img src="/data/images/processed/{{ result[1] }}.jpg" height="200px"></a>
+          <figcaption>{{ result[0] }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </body>
+</html>

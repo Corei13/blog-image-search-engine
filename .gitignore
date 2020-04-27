@@ -1,0 +1,5 @@
+*
+!README.md
+!src/*.py
+!src/templates/*.html
+!src/data
